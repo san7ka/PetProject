@@ -3,12 +3,18 @@
  */
 package org.example;
 
-public class App {
-    public String getGreeting() {
-        return "Hello, SDET";
-    }
+import static org.example.StringUtils.*;
 
+public class App {
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
+        String s = "Hello world!";
+        System.out.println(isPalindrome(s));
+        System.out.println(reverse(s));
+        System.out.println(countVowels("LinkageErrory"));
+    }
+
+    public String getGreeting() {
+        return "Hello, SDET";
     }
 }
