@@ -3,18 +3,23 @@
  */
 package org.example;
 
-import static org.example.StringUtils.*;
+import java.util.Scanner;
+
+import static org.example.Calculator.makeCalculation;
+
 
 public class App {
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
-        String s = "Hello world!";
-        System.out.println(isPalindrome(s));
-        System.out.println(reverse(s));
-        System.out.println(countVowels("LinkageErrory"));
+        Scanner scanner = new Scanner(System.in);
+        double firstNumber = scanner.nextDouble();
+        double secondNumber = scanner.nextDouble();
+        String action = scanner.next();
+        if (action.equals("/") && secondNumber == 0) {
+            System.out.println("Division by zero");
+            return;
+        }
+        System.out.println(makeCalculation(firstNumber, secondNumber, action));
+        System.out.println(Solution.isPalindrome(1223));
     }
 
-    public String getGreeting() {
-        return "Hello, SDET";
-    }
 }
